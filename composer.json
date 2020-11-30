@@ -1,0 +1,18 @@
+{
+    "name": "masaruedo/chuk-norris-jokes",
+    "description": "Create random chuk norris jokes",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eding Muhamad",
+            "email": "masaruedo@yahoo.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Masaruedo\\ChukNorrisJokes\\": "src/"
+        }
+    }
+}
