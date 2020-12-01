@@ -2,8 +2,8 @@
 
 namespace Masaruedo\ChuckNorrisJokes\Tests;
 
-use PHPUnit\Framework\TestCase;
 use Masaruedo\ChukNorrisJokes\JokeFactory;
+use PHPUnit\Framework\TestCase;
 
 class JokeFactoryTest extends TestCase
 {
@@ -13,12 +13,12 @@ class JokeFactoryTest extends TestCase
         $jokes = new JokeFactory([
             'This is a joke',
         ]);
-        
+
         $joke = $jokes->getRandomJoke();
 
         $this->assertSame('This is a joke', $joke);
     }
-    
+
     /** @test */
     public function it_returns_a_predefined_joke()
     {
@@ -27,11 +27,11 @@ class JokeFactoryTest extends TestCase
             'Time waits for no man. Unless that man is Chuck Norris.',
             'If you spell Chuck Norris in Scrabble, you win. Forever.',
             'Chuck Norris does not sleep. He waits.',
-            'There is no chin behind Chuck Norris’ beard. There is only another fist.'
+            'There is no chin behind Chuck Norris’ beard. There is only another fist.',
         ];
 
         $jokes = new JokeFactory();
-        
+
         $joke = $jokes->getRandomJoke();
 
         $this->assertContains($joke, $chukNorrisJokes);
