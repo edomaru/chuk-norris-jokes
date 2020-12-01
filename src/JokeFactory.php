@@ -9,7 +9,7 @@ class JokeFactory
         'Time waits for no man. Unless that man is Chuck Norris.',
         'If you spell Chuck Norris in Scrabble, you win. Forever.',
         'Chuck Norris does not sleep. He waits.',
-        'There is no chin behind Chuck Norris’ beard. There is only another fist.'
+        'There is no chin behind Chuck Norris’ beard. There is only another fist.',
     ];
 
     public function __construct(array $jokes = [])
