@@ -7,7 +7,7 @@ Create chuk norris jokes in your next PHP project
 Install the package using this command:
 
 ```bash
-composer require masaruedo/my-first-package
+composer require masaruedo/chuk-norris-jokes
 ```
 
 ## Usage
