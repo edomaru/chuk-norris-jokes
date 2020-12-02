@@ -3,12 +3,11 @@
 namespace Masaruedo\ChuckNorrisJokes\Tests;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\TestCase;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Exception\RequestException;
 use Masaruedo\ChukNorrisJokes\JokeFactory;
+use PHPUnit\Framework\TestCase;
 
 class JokeFactoryTest extends TestCase
 {
@@ -18,7 +17,7 @@ class JokeFactoryTest extends TestCase
         $mock = new MockHandler([
             new Response(200, [], '{ "type": "success", "value": { "id": 69, "joke": "Scientists have estimated that the energy given off during the Big Bang is roughly equal to 1CNRhK (Chuck Norris Roundhouse Kick).", "categories": [ "nerdy" ] } }'),
         ]);
-        
+
         $handlerStack = HandlerStack::create($mock);
         $client = new Client(['handler' => $handlerStack]);
 
