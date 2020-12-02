@@ -2,25 +2,25 @@
 
 namespace Masaruedo\ChukNorrisJokes;
 
+use GuzzleHttp\Client;
+
 class JokeFactory
 {
-    protected $jokes = [
-        'Chuck Norris doesn\'t read books. He stares them down until he gets the information he wants.',
-        'Time waits for no man. Unless that man is Chuck Norris.',
-        'If you spell Chuck Norris in Scrabble, you win. Forever.',
-        'Chuck Norris does not sleep. He waits.',
-        'There is no chin behind Chuck Norris’ beard. There is only another fist.',
-    ];
+    const API_ENDPOINT = 'http://api.icndb.com/jokes/random';
 
-    public function __construct(array $jokes = [])
+    protected $client;
+
+    public function __construct(Client $client = null)
     {
-        if ($jokes) {
-            $this->jokes = $jokes;
-        }
+        $this->client = $client ?: new Client();
     }
 
     public function getRandomJoke()
     {
-        return $this->jokes[array_rand($this->jokes)];
+        $response = $this->client->get(self::API_ENDPOINT);
+
+        $joke = json_decode($response->getBody()->getContents());
+
+        return $joke->value->joke;
     }
 }

@@ -2,38 +2,30 @@
 
 namespace Masaruedo\ChuckNorrisJokes\Tests;
 
-use Masaruedo\ChukNorrisJokes\JokeFactory;
+use GuzzleHttp\Client;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\Exception\RequestException;
+use Masaruedo\ChukNorrisJokes\JokeFactory;
 
 class JokeFactoryTest extends TestCase
 {
     /** @test */
     public function it_returns_a_random_joke()
     {
-        $jokes = new JokeFactory([
-            'This is a joke',
+        $mock = new MockHandler([
+            new Response(200, [], '{ "type": "success", "value": { "id": 69, "joke": "Scientists have estimated that the energy given off during the Big Bang is roughly equal to 1CNRhK (Chuck Norris Roundhouse Kick).", "categories": [ "nerdy" ] } }'),
         ]);
+        
+        $handlerStack = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handlerStack]);
+
+        $jokes = new JokeFactory($client);
 
         $joke = $jokes->getRandomJoke();
 
-        $this->assertSame('This is a joke', $joke);
-    }
-
-    /** @test */
-    public function it_returns_a_predefined_joke()
-    {
-        $chukNorrisJokes = [
-            'Chuck Norris doesn\'t read books. He stares them down until he gets the information he wants.',
-            'Time waits for no man. Unless that man is Chuck Norris.',
-            'If you spell Chuck Norris in Scrabble, you win. Forever.',
-            'Chuck Norris does not sleep. He waits.',
-            'There is no chin behind Chuck Norris’ beard. There is only another fist.',
-        ];
-
-        $jokes = new JokeFactory();
-
-        $joke = $jokes->getRandomJoke();
-
-        $this->assertContains($joke, $chukNorrisJokes);
+        $this->assertSame('Scientists have estimated that the energy given off during the Big Bang is roughly equal to 1CNRhK (Chuck Norris Roundhouse Kick).', $joke);
     }
 }
