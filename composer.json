@@ -23,6 +23,17 @@
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.4"
+        "phpunit/phpunit": "^9.4",
+        "orchestra/testbench": "^6.5"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Masaruedo\\ChukNorrisJokes\\ChuckNorrisJokesServiceProvider"
+            ],
+            "aliases": {
+                "ChuckNorris": "Masaruedo\\ChukNorrisJokes\\Facades\\ChuckNorris"
+            }
+        }
     }
 }
