@@ -29,7 +29,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Masaruedo\\ChukNorrisJokes\\ChuckNorrisJokesServiceProvider"
+                "Masaruedo\\ChukNorrisJokes\\ChukNorrisJokesServiceProvider"
             ],
             "aliases": {
                 "ChuckNorris": "Masaruedo\\ChukNorrisJokes\\Facades\\ChuckNorris"
