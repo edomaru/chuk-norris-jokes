@@ -3,11 +3,11 @@
 namespace Masaruedo\Jokes\Tests;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\TestCase;
 use Masaruedo\Jokes\JokeFactory;
-use GuzzleHttp\Handler\MockHandler;
+use PHPUnit\Framework\TestCase;
 
 class JokeFactoryTest extends TestCase
 {
