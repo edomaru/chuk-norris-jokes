@@ -1,5 +1,5 @@
 {
-    "name": "masaruedo/chuk-norris-jokes",
+    "name": "masaruedo/jokes",
     "description": "Create random chuk norris jokes",
     "type": "library",
     "license": "MIT",
@@ -14,12 +14,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Masaruedo\\ChukNorrisJokes\\": "src/"
+            "Masaruedo\\Jokes\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Masaruedo\\ChukNorrisJokes\\Tests\\": "tests/"
+            "Masaruedo\\Jokes\\Tests\\": "tests/"
         }
     },
     "require-dev": {
@@ -29,10 +29,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Masaruedo\\ChukNorrisJokes\\ChukNorrisJokesServiceProvider"
+                "Masaruedo\\Jokes\\JokesServiceProvider"
             ],
             "aliases": {
-                "ChuckNorris": "Masaruedo\\ChukNorrisJokes\\Facades\\ChuckNorris"
+                "ChuckNorris": "Masaruedo\\Jokes\\Facades\\ChuckNorris"
             }
         }
     }

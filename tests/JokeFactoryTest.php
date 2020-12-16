@@ -1,13 +1,13 @@
 <?php
 
-namespace Masaruedo\ChuckNorrisJokes\Tests;
+namespace Masaruedo\Jokes\Tests;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use Masaruedo\ChukNorrisJokes\JokeFactory;
 use PHPUnit\Framework\TestCase;
+use Masaruedo\Jokes\JokeFactory;
+use GuzzleHttp\Handler\MockHandler;
 
 class JokeFactoryTest extends TestCase
 {

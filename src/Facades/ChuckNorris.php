@@ -1,6 +1,6 @@
 <?php
 
-namespace Masaruedo\ChukNorrisJokes\Facades;
+namespace Masaruedo\Jokes\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -8,6 +8,6 @@ class ChuckNorris extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'chuck-norris';
+        return 'jokes';
     }
 }

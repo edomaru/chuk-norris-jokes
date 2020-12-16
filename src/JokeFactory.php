@@ -1,6 +1,6 @@
 <?php
 
-namespace Masaruedo\ChukNorrisJokes;
+namespace Masaruedo\Jokes;
 
 use GuzzleHttp\Client;
 
