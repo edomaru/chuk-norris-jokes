@@ -2,7 +2,6 @@
 
 namespace Masaruedo\Jokes;
 
-use Masaruedo\Jokes\JokeFactory;
 use Illuminate\Support\ServiceProvider;
 use Masaruedo\Jokes\Console\ChuckNorrisJoke;
 
@@ -14,7 +13,7 @@ class JokesServiceProvider extends ServiceProvider
             $this->commands([
                 ChuckNorrisJoke::class,
             ]);
-        }    
+        }
     }
 
     public function register()
